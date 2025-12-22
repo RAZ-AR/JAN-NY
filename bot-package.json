@@ -1,0 +1,25 @@
+{
+  "name": "ny-sets-telegram-bot",
+  "version": "1.0.0",
+  "description": "Telegram bot для обработки заказов новогодних сетов",
+  "main": "bot-example.js",
+  "scripts": {
+    "start": "node bot-example.js",
+    "dev": "nodemon bot-example.js"
+  },
+  "keywords": [
+    "telegram",
+    "bot",
+    "new-year",
+    "order"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "node-telegram-bot-api": "^0.64.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}
