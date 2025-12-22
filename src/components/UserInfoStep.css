@@ -1,8 +1,10 @@
 .user-info-step .step-title {
-  font-size: 48px;
+  font-size: 52px;
   font-weight: 900;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
   animation: titleBounce 2s ease-in-out infinite;
+  font-family: 'Space Grotesk', sans-serif;
+  letter-spacing: -0.03em;
 }
 
 @keyframes titleBounce {
@@ -21,10 +23,11 @@
 }
 
 .emoji-decoration {
-  font-size: 32px;
+  font-size: 36px;
   text-align: center;
-  margin: 20px 0;
+  margin: 25px 0;
   animation: emojiFloat 3s ease-in-out infinite;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.1));
 }
 
 .emoji-top {

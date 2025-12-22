@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 
 * {
   margin: 0;
@@ -7,10 +7,11 @@
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  background: #0a0a0a;
 }
 
 .app {
@@ -217,105 +218,130 @@ body {
 }
 
 .step-title {
-  font-size: 32px;
+  font-size: 42px;
   font-weight: 800;
   color: #000;
+  font-family: 'Space Grotesk', sans-serif;
   text-transform: uppercase;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
 }
 
 .step-subtitle {
-  font-size: 18px;
-  font-weight: 400;
-  color: rgba(0, 0, 0, 0.6);
-  margin-top: 5px;
+  font-size: 16px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.7);
+  margin-top: 10px;
   margin-bottom: 40px;
+  letter-spacing: 0.02em;
 }
 
 .form-group {
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
 .form-group label {
   display: block;
-  font-size: 14px;
-  font-weight: 600;
-  color: rgba(0, 0, 0, 0.7);
-  margin-bottom: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.8);
+  margin-bottom: 10px;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
 }
 
 .form-group input,
 .form-group textarea {
   width: 100%;
-  padding: 16px;
-  border: 2px solid rgba(0, 0, 0, 0.1);
-  border-radius: 16px;
+  padding: 18px 20px;
+  border: 2px solid rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
   font-size: 16px;
-  font-family: 'Inter', sans-serif;
-  background: rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(10px);
-  transition: all 0.2s;
+  font-family: 'Manrope', sans-serif;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: rgba(0, 0, 0, 0.4);
+  font-weight: 400;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: rgba(0, 0, 0, 0.3);
-  background: rgba(255, 255, 255, 0.7);
+  border-color: rgba(0, 0, 0, 0.4);
+  background: rgba(255, 255, 255, 0.9);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
 }
 
 .next-btn,
 .submit-btn {
   width: 100%;
-  padding: 18px;
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(40, 40, 40, 0.9));
+  padding: 20px 32px;
+  background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
   color: #fff;
   border: none;
-  border-radius: 16px;
-  font-size: 18px;
+  border-radius: 24px;
+  font-size: 16px;
   font-weight: 700;
+  font-family: 'Space Grotesk', sans-serif;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.1em;
   cursor: pointer;
-  transition: all 0.3s;
-  margin-top: 20px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  margin-top: 24px;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.3),
+    0 2px 8px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 .next-btn::before,
 .submit-btn::before {
   content: '';
   position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.2);
-  transform: translate(-50%, -50%);
-  transition: width 0.6s, height 0.6s;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s;
 }
 
 .next-btn:hover::before,
 .submit-btn:hover::before {
-  width: 300px;
-  height: 300px;
+  left: 100%;
 }
 
 .next-btn:hover,
 .submit-btn:hover {
-  background: linear-gradient(135deg, rgba(0, 0, 0, 1), rgba(50, 50, 50, 1));
-  transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  transform: translateY(-4px) scale(1.01);
+  box-shadow:
+    0 16px 40px rgba(0, 0, 0, 0.4),
+    0 4px 12px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
 }
 
 .next-btn:active,
 .submit-btn:active {
-  transform: translateY(0) scale(0.98);
+  transform: translateY(-1px) scale(0.99);
+  box-shadow:
+    0 4px 16px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 .back-btn {
