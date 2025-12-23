@@ -25,7 +25,7 @@ const UserInfoStep = ({ onNext, initialData }) => {
     <div className="step user-info-step">
       <div className="emoji-decoration emoji-top">✨🎄✨</div>
       <h1 className="step-title">🎉 Новогодние сеты 🎊</h1>
-      <p className="step-subtitle">🗓️ 31 декабря 2024 🎆</p>
+      <p className="step-subtitle">🗓️ 31 декабря 🎆</p>
 
       <form onSubmit={handleSubmit} className="user-form">
         <div className="form-group">

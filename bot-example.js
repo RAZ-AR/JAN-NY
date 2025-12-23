@@ -143,7 +143,7 @@ function formatOrderForAdmin(data, orderNumber, user) {
 
   // Доставка
   message += `<b>🚚 ДОСТАВКА:</b>\n`;
-  message += `Дата: 31 декабря 2024\n`;
+  message += `Дата: 31 декабря\n`;
   message += `Время: ${DELIVERY_SLOTS[deliverySlot]}\n`;
   message += `Адрес: ул. ${address.street}, д. ${address.house}`;
   if (address.apartment) message += `, кв. ${address.apartment}`;
@@ -186,7 +186,7 @@ function formatOrderForClient(data, orderNumber) {
     }
   });
 
-  message += `\n📅 Доставка: 31 декабря 2024\n`;
+  message += `\n📅 Доставка: 31 декабря\n`;
   message += `\nМы свяжемся с вами в ближайшее время для подтверждения.\n`;
   message += `\n🎄 <b>С наступающим Новым Годом!</b> 🎄`;
 
