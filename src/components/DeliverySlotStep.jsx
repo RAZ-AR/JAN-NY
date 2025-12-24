@@ -22,7 +22,7 @@ const DeliverySlotStep = ({ onNext, onBack, initialData }) => {
         <h2 className="step-title">Время доставки</h2>
       </div>
 
-      <p className="delivery-date">31 декабря 2024</p>
+      <p className="delivery-date">31 декабря</p>
 
       <div className="slots-list">
         {deliverySlots.map(slot => (

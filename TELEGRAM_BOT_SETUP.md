@@ -83,7 +83,7 @@ function formatOrderMessage(data) {
   message += `\n`;
 
   message += `<b>🚚 Доставка:</b>\n`;
-  message += `Дата: 31 декабря 2024\n`;
+  message += `Дата: 31 декабря\n`;
   message += `Время: ${slotTimes[deliverySlot]}\n`;
   message += `Адрес: ул. ${address.street}, д. ${address.house}`;
   if (address.apartment) message += `, кв. ${address.apartment}`;

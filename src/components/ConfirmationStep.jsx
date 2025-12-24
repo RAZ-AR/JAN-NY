@@ -74,7 +74,7 @@ const ConfirmationStep = ({ onSubmit, onBack, orderData }) => {
 
         <section className="summary-section">
           <h3>Доставка</h3>
-          <p>31 декабря 2024</p>
+          <p>31 декабря</p>
           <p>{getSlotLabel(orderData.deliverySlot)}</p>
           <p className="address-text">
             ул. {orderData.address.street}, д. {orderData.address.house}
