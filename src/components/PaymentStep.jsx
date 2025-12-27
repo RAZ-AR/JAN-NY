@@ -33,7 +33,7 @@ const PaymentStep = ({ onNext, onBack, initialData }) => {
     <div className="step payment-step">
       <div className="step-header">
         <button className="back-btn" onClick={onBack}>←</button>
-        <h2 className="step-title">Способ оплаты</h2>
+        <h2 className="step-title">💳 Способ оплаты 💰</h2>
       </div>
 
       <div className="payment-methods">
@@ -54,23 +54,23 @@ const PaymentStep = ({ onNext, onBack, initialData }) => {
       {payment.method === 'cash' && (
         <div className="change-section">
           <label htmlFor="changeFrom" className="change-label">
-            Нужна сдача?
+            💵 Нужна сдача?
           </label>
           <input
             type="text"
             id="changeFrom"
             value={payment.changeFrom}
             onChange={handleChangeInput}
-            placeholder="С какой суммы?"
+            placeholder="С какой суммы? 💸"
             className="change-input"
           />
-          <p className="change-hint">Укажите сумму, если нужна сдача</p>
+          <p className="change-hint">💡 Укажите сумму, если нужна сдача</p>
         </div>
       )}
 
       {payment.method && (
         <button className="next-btn" onClick={handleNext}>
-          Далее
+          Далее ➜ ✅
         </button>
       )}
     </div>

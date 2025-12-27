@@ -27,12 +27,12 @@ const AddressStep = ({ onNext, onBack, initialData }) => {
     <div className="step address-step">
       <div className="step-header">
         <button className="back-btn" onClick={onBack}>←</button>
-        <h2 className="step-title">Адрес доставки</h2>
+        <h2 className="step-title">📍 Адрес доставки 🏠</h2>
       </div>
 
       <form onSubmit={handleSubmit} className="address-form">
         <div className="form-group">
-          <label htmlFor="street">Улица</label>
+          <label htmlFor="street">🛣️ Улица</label>
           <input
             type="text"
             id="street"
@@ -46,7 +46,7 @@ const AddressStep = ({ onNext, onBack, initialData }) => {
 
         <div className="form-row">
           <div className="form-group">
-            <label htmlFor="house">Дом</label>
+            <label htmlFor="house">🏠 Дом</label>
             <input
               type="text"
               id="house"
@@ -59,7 +59,7 @@ const AddressStep = ({ onNext, onBack, initialData }) => {
           </div>
 
           <div className="form-group">
-            <label htmlFor="apartment">Квартира</label>
+            <label htmlFor="apartment">🚪 Квартира</label>
             <input
               type="text"
               id="apartment"
@@ -72,19 +72,19 @@ const AddressStep = ({ onNext, onBack, initialData }) => {
         </div>
 
         <div className="form-group">
-          <label htmlFor="note">Комментарий</label>
+          <label htmlFor="note">📝 Комментарий</label>
           <textarea
             id="note"
             name="note"
             value={address.note}
             onChange={handleChange}
-            placeholder="Подъезд, этаж, домофон..."
+            placeholder="Подъезд, этаж, домофон... 🔔"
             rows="3"
           />
         </div>
 
         <button type="submit" className="next-btn">
-          Далее
+          Далее ➜ 💳
         </button>
       </form>
     </div>

@@ -2,9 +2,9 @@ import { useState } from 'react';
 import { sets, deliverySlots, paymentMethods } from '../data/sets';
 import './ConfirmationStep.css';
 
-const ConfirmationStep = ({ onSubmit, onBack, orderData }) => {
-  const [promoCode, setPromoCode] = useState('');
-  const [wishes, setWishes] = useState('');
+const ConfirmationStep = ({ onSubmit, onBack, orderData, onUpdate }) => {
+  const [promoCode, setPromoCode] = useState(orderData.promoCode || '');
+  const [wishes, setWishes] = useState(orderData.wishes || '');
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const getSetName = (setId) => {
@@ -42,22 +42,39 @@ const ConfirmationStep = ({ onSubmit, onBack, orderData }) => {
     });
   };
 
+  // Обновляем orderData при изменении промокода или пожеланий
+  const handlePromoCodeChange = (e) => {
+    const value = e.target.value;
+    setPromoCode(value);
+    if (onUpdate) {
+      onUpdate({ ...orderData, promoCode: value, wishes });
+    }
+  };
+
+  const handleWishesChange = (e) => {
+    const value = e.target.value;
+    setWishes(value);
+    if (onUpdate) {
+      onUpdate({ ...orderData, promoCode, wishes: value });
+    }
+  };
+
   return (
     <div className="step confirmation-step">
       <div className="step-header">
         <button className="back-btn" onClick={onBack}>←</button>
-        <h2 className="step-title">Подтверждение</h2>
+        <h2 className="step-title">✅ Подтверждение заказа 🎁</h2>
       </div>
 
       <div className="order-summary">
         <section className="summary-section">
-          <h3>Контактные данные</h3>
+          <h3>👤 Контактные данные</h3>
           <p>{orderData.userInfo.name}</p>
           <p>{orderData.userInfo.phone}</p>
         </section>
 
         <section className="summary-section">
-          <h3>Ваш заказ</h3>
+          <h3>🍽️ Ваш заказ</h3>
           {Object.entries(orderData.selectedSets).map(([setId, quantity]) => (
             quantity > 0 && (
               <div key={setId} className="order-item">
@@ -73,8 +90,13 @@ const ConfirmationStep = ({ onSubmit, onBack, orderData }) => {
         </section>
 
         <section className="summary-section">
+<<<<<<< HEAD
           <h3>Доставка</h3>
           <p>31 декабря</p>
+=======
+          <h3>🚚 Доставка</h3>
+          <p>🎄 31 декабря</p>
+>>>>>>> d93b8f8bb954e900833d485edcb2c07609fab9af
           <p>{getSlotLabel(orderData.deliverySlot)}</p>
           <p className="address-text">
             ул. {orderData.address.street}, д. {orderData.address.house}
@@ -86,7 +108,7 @@ const ConfirmationStep = ({ onSubmit, onBack, orderData }) => {
         </section>
 
         <section className="summary-section">
-          <h3>Оплата</h3>
+          <h3>💳 Оплата</h3>
           <p>{getPaymentMethodName(orderData.payment.method)}</p>
           {orderData.payment.changeFrom && (
             <p>Сдача с {orderData.payment.changeFrom} дин</p>
@@ -96,34 +118,30 @@ const ConfirmationStep = ({ onSubmit, onBack, orderData }) => {
 
       <div className="final-form">
         <div className="form-group">
-          <label htmlFor="promoCode">Промокод (если есть)</label>
+          <label htmlFor="promoCode">🎁 Промокод (если есть)</label>
           <input
             type="text"
             id="promoCode"
             value={promoCode}
-            onChange={(e) => setPromoCode(e.target.value)}
-            placeholder="Введите промокод"
+            onChange={handlePromoCodeChange}
+            placeholder="Введите промокод 🎟️"
           />
         </div>
 
         <div className="form-group">
-          <label htmlFor="wishes">Пожелания к заказу</label>
+          <label htmlFor="wishes">💬 Пожелания к заказу</label>
           <textarea
             id="wishes"
             value={wishes}
-            onChange={(e) => setWishes(e.target.value)}
-            placeholder="Особые пожелания..."
+            onChange={handleWishesChange}
+            placeholder="Особые пожелания... ✨"
             rows="3"
           />
         </div>
 
-        <button
-          className="submit-btn"
-          onClick={handleSubmit}
-          disabled={isSubmitting}
-        >
-          {isSubmitting ? 'Отправка...' : 'Подтвердить заказ'}
-        </button>
+        <p className="telegram-hint">
+          👇 Нажмите кнопку внизу экрана для отправки заказа
+        </p>
       </div>
     </div>
   );

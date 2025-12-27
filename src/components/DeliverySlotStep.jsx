@@ -19,10 +19,14 @@ const DeliverySlotStep = ({ onNext, onBack, initialData }) => {
     <div className="step delivery-slot-step">
       <div className="step-header">
         <button className="back-btn" onClick={onBack}>←</button>
-        <h2 className="step-title">Время доставки</h2>
+        <h2 className="step-title">🚚 Время доставки ⏰</h2>
       </div>
 
+<<<<<<< HEAD
       <p className="delivery-date">31 декабря</p>
+=======
+      <p className="delivery-date">🎄 31 декабря 🎉</p>
+>>>>>>> d93b8f8bb954e900833d485edcb2c07609fab9af
 
       <div className="slots-list">
         {deliverySlots.map(slot => (
@@ -38,7 +42,7 @@ const DeliverySlotStep = ({ onNext, onBack, initialData }) => {
 
       {selectedSlot && (
         <button className="next-btn" onClick={handleNext}>
-          Далее
+          Далее ➜ 📍
         </button>
       )}
     </div>
